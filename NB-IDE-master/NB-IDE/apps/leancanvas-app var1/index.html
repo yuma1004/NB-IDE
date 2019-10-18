@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+        <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+        
+        <script type="text/javascript" src="sticky-note-container.js"></script>
+        
+
+        <link rel="stylesheet" type="text/css" href="sticky-note.css">
+        
+
+        <title>付箋Apps</title>
+    </head>
+    <body>
+        <div id="maine">
+            <div id="title-container">
+                <h1>LEAN CANVAS</h1>
+                <input type="text" id="title" value="タイトル">
+            </div>
+            <img src="img/リーンキャンバス.png" alt="リーンキャンバス" class="main-img">
+            
+            <div id="sticky-note-container">
+                <input type="button" id="add-button" value="追加">
+            </div>
+        </div>
+
+
+
+<div class="container">
+    <div class="table-wrapper">
+        <table border="1px" cellpadding="6" cellspacing="5" align="center" width="1030px">
+            <caption>食べ物について</caption>
+             <tr>
+                 <th class="card-wrapper" rowspan="2">
+                     <h2>1-Problem</h2>
+                     <div id="problem-1"></div>
+ 
+                     <!-- add-card -->
+                     <p class="target add-card">+</p>
+                    
+                     <!-- 1 -->
+                     
+                 </th>
+ 
+                 <th  class="card-wrapper" >
+                     <h2>4-Solution</h2>
+                     <div id="solution-4"></div>
+                     
+                     <!-- add-card -->
+                     <p class="target add-card">+</p>
+                     <!-- 4 -->
+                  </th>
+ 
+                  <th  class="card-wrapper" rowspan="2" colspan="2">
+                     <h2>3-Unique value</h2>
+                     <div id="unique-value-3"></div>
+                     
+ 
+ 
+                     <!-- 3 -->
+                 </th>
+ 
+                 <th class="card-wrapper" >
+                     <h2>9-Unfair advantage</h2>
+                     <div id="unfair-advantage-9"></div>
+                     <button class="btn btn-success" id="addDefault2">ボード追加</button>
+                     <button class="btn btn-success" id="addToDo">Todo追加</button>
+ 
+ 
+                     <!-- 9 -->
+                 </th>
+ 
+                  <th  class="card-wrapper" rowspan="2">
+                         <h2>2-Customer segments</h2>
+                     <div id="customer-segments-2"></div>
+                      
+                      <!-- 2 -->
+                 </th>
+             </tr>   
+             <tr>
+                 <th class="card-wrapper" >
+                     <h2>8-Key metrics</h2>
+                     <div id="key-metrics-8"></div>
+                     <!-- 8 -->
+                 </th>
+                 <th class="card-wrapper" >
+                     <h2>5-Channels</h2>
+                     <div id="channels-5"></div>
+                     <!-- 5 -->
+                 </th>
+             </tr>
+             <tr>
+                 <th class="card-wrapper"  colspan="3">
+                     <h2>7-Cost-structure</h2>
+                     <div id="cost-structure-7"></div>
+                     <!-- 7 -->
+                 </th>
+                 <th  class="card-wrapper" colspan="3">
+                     <h2>6-Revenue-streams</h2>
+                     <div id="revenue-streams-6"></div>
+                     <!-- 6 -->
+                 </th>
+             </tr>
+        </table>
+
+
+        
+            
+        
+        <!-- jsを機能させる為に必須 -->
+        <script src="sticky-note.js"></script>
+    </body>
+</html>
