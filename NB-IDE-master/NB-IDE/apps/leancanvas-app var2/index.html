@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+        <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+        
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+        <title>Lean Canvas app var2</title>
+    </head>
+    <body>
+        <div id="maine">
+
+                <!-- <table class="list">
+                        <tbody>
+                            <tr>
+                                <td><input type="text" name="name"></td>
+                                <td><button class="remove">-</button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="name"></td>
+                                <td><button class="remove">-</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button id="addRow">+ 追加</button> -->
+        
+
+        <div class="container">
+                <table class="table-wrapper" border="0px" cellpadding="6" cellspacing="5" align="center" width="1100px">
+                    <caption>LEAN CANVAS app var2</caption>
+                        <tr>
+                            <!-- 1 -->
+                            <th class="card-wrapper" rowspan="2">
+                                <h2>1-Problem</h2>
+                                
+                                <table class="list-1">
+                                    <tbody id="tbody-1">
+                                       <!-- clickするとココにtextareaが追加される -->
+                                    </tbody>
+                                </table>
+                                <div id="card-wrapper-1">
+                                    <p id="add-button-1" class="add-card">+</p>
+                                </div>
+                            </th>
+
+                            <!-- 4 -->
+                            <th  class="card-wrapper" >
+                                <h2>4-Solution</h2>
+
+                                <table class="list-4">
+                                        <tbody id="tbody-4">
+                                            <!-- clickするとココにtrが追加される -->
+                                        </tbody>
+                                </table>
+                                <div id="card-wrapper-4">
+                                    <p id="add-button-4" class="add-card">+</p>
+                                </div>
+                            </th>
+
+                            <!-- 3 -->
+                            <th  class="card-wrapper" rowspan="2" colspan="2">
+                                <h2>3-Unique value</h2>
+                                <table class="list-3">
+                                    <tbody id="tbody-3">
+                                        <!-- clickするとココにtrが追加される -->
+                                    </tbody>
+                                </table>
+                                <div id="card-wrapper-3">
+                                    <p id="add-button-3" class="add-card">+</p>
+                                </div>                  
+                            </th>
+            
+                            <!-- 9 -->
+                            <th class="card-wrapper" >
+                                <h2>9-Unfair advantage</h2>
+                                <table class="list-9">
+                                    <tbody id="tbody-9">
+                                        <!-- clickするとココにtrが追加される -->
+                                    </tbody>
+                                </table>
+                                <div id="card-wrapper-9">
+                                    <p id="add-button-9" class="add-card">+</p>
+                                </div>
+                            </th>
+                            
+                            <!-- 2 -->
+                            <th  class="card-wrapper" rowspan="2">
+                                <h2>2-Customer segments</h2>
+                                <table class="list-2">
+                                        <tbody id="tbody-2">
+                                            <!-- clickするとココにtrが追加される -->
+                                        </tbody>
+                                </table>
+                                <div id="card-wrapper-2">
+                                    <p id="add-button-2" class="add-card">+</p>
+                                </div>
+                            </th>
+                        </tr>   
+                        <tr>
+                            <!-- 8 -->
+                            <th class="card-wrapper" >
+                                <h2>8-Key metrics</h2>
+                                <table class="list-8">
+                                    <tbody id="tbody-8">
+                                        <!-- clickするとココにtrが追加される -->
+                                    </tbody>
+                                </table>
+                                <div id="card-wrapper-8">
+                                    <p id="add-button-8" class="add-card">+</p>
+                                </div>
+                            </th>
+
+                            <!-- 5 -->
+                            <th class="card-wrapper" >
+                                <h2>5-Channels</h2>
+                                <table class="list-5">
+                                    <tbody id="tbody-5">
+                                        <!-- clickするとココにtrが追加される -->
+                                    </tbody>
+                                </table>
+                                <div id="card-wrapper-5">
+                                    <p id="add-button-5" class="add-card">+</p>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+
+                            <!-- 7 -->
+                            <th class="card-wrapper"  colspan="3">
+                                <h2>7-Cost-structure</h2>
+                                <table class="list-7">
+                                    <tbody id="tbody-7">
+                                        <!-- clickするとココにtrが追加される -->
+                                    </tbody>
+                                </table>
+                                <div id="card-wrapper-7">
+                                    <p id="add-button-7" class="add-card">+</p>
+                                </div>
+                            </th>
+
+                            <!-- 6 -->
+                            <th  class="card-wrapper" colspan="3">
+                                <h2>6-Revenue-streams</h2>
+                                <table class="list-6">
+                                        <tbody id="tbody-6">
+                                            <!-- clickするとココにtrが追加される -->
+                                        </tbody>
+                                </table>
+                                <div id="card-wrapper-6">
+                                    <p id="add-button-6" class="add-card">+</p>
+                                </div>
+                            </th>
+                        </tr>
+                </table>
+        
+        <!-- jsを機能させる為に必須 -->
+        <script src="script.js"></script>
+    </body>
+</html>
