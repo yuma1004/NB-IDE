@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-    width: 1170px;
+    width: auto;
     padding: 0px 15px;
     margin: auto;
 }
@@ -48,10 +48,11 @@ header {
 }
 
 .header-right{
-    
-    background-color: rgba(255, 255, 255, 0.3);
-    margin-left: 1100px;
-    
+    float: right;
+    margin-right: 60px;
+    line-height: 50px;
+
+
 }
 
 /* nav */
@@ -66,7 +67,7 @@ header {
 .nav li {
     position: relative;
     list-style: none;
-    
+
   }
 
 .nav li a {
@@ -82,9 +83,9 @@ header {
     text-decoration: none;
     border-right: 1px solid #eee;
     box-sizing: border-box;
-    
+
   }
-  
+
   /* sub */
   .nav li ul {
     left: -40px;
@@ -98,8 +99,8 @@ header {
   .nav li ul li a {
     border: 1px solid #eee;
   }
-  
-  
+
+
   /* hover */
   .nav > li:hover > a {/*layer-1*/
     color: rgb(51, 51, 51);
