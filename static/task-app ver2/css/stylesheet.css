@@ -64,7 +64,7 @@ li{
 .article-title.open:after {
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  
+
 }
 
 .article-title-4b:after {
@@ -79,14 +79,14 @@ li{
     height: 6px;
     border-top: solid 1px rgb(0, 0, 0);
     border-right: solid 1px rgb(0, 0, 0);
-  
+
     -webkit-transform: rotate(135deg);
     transform: rotate(135deg);
 }
 .article-title-4b.open:after {
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
-    
+
   }
 
 
@@ -113,7 +113,7 @@ header {
 .header-a .header-left a,
 .header-b .header-left a{
     color: white;
-   
+
 }
 
 /* header-b */
@@ -160,9 +160,10 @@ h3{
 
 
 .layer-A{
+    display: none;
     float: left;
-    margin-top: 10px;
     width: 310px;
+    margin-top: 10px;
     box-shadow:rgba(0, 0, 0, 0.3) 0px 1px 3px;
 }
 
@@ -175,16 +176,15 @@ h3{
 .layer-a ul{
     padding-left: 20px;
     margin: 0;
-    
+
 }
 
 
 .layer-B{
-    width: 380px;
-    margin-left: 3px;
     float: left;
-    box-shadow:rgba(0, 0, 0, 0.3) 1px 1px 3px;
+    width: 380px;
     margin-top: 10px;
+    margin-left: 3px;
     margin-right: 10px;
-
+    box-shadow:rgba(0, 0, 0, 0.3) 1px 1px 3px;
 }
