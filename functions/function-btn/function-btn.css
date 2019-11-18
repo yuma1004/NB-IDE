@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+.container {
+    width: 1170px;
+    margin: auto;
+}
+
+h1,p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    margin: 0px;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+/* main */
+/* function-btn */
+.btn {
+    margin: 30px 0;
+    text-align: center;
+    
+}
+
+.create {
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 8px 50px;
+    color: white;
+    background-color: black;
+}
+/* ボタンに光沢つける */
+.soft-gloss{
+    background-image: -webkit-linear-gradient(rgba(255,255,255,.3) 0%,transparent 50%,transparent 50%,rgba(0,0,0,.1) 100%);
+    background-image:         linear-gradient(rgba(255,255,255,.3) 0%,transparent 50%,transparent 50%,rgba(0,0,0,.1) 100%);
+    box-shadow: 0 2px 2px 0 rgba(255,255,255,.1) inset,0 2px 10px 0 rgba(255,255,255,.2) inset,0 -2px 2px 0 rgba(0,0,0,.1) inset;
+    border: 1px solid rgba(0,0,0,.2);
+}
+
+.note {
+    background-color:rgb(223, 223, 223);
+    height: auto;
+    width: 1170px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 30px 0;
+}
+
+.text-form{
+    height: 30px;
+    width: 25%;
+    margin: 10px 40px;
+    font-size: 18px;
+    
+}
+
+
+
+/* 
+.main-navi, .left-navi, .right-navi {
+    height: 400px;
+  }
+  .left-navi {
+    background-color: red;
+    color: #fff;
+    float: left;
+    width: calc(100% / 3);
+  }
+  .main-navi {
+    background-color: blue;
+    color: #fff;
+    width: calc(100% / 3);
+    float: right;
+  }
+  .right-navi {
+    background-color: green;
+    color: #fff;
+    float: right;
+    width: calc(100% / 3);
+  }
+  main {
+    width: 100%;
+    float: right;
+    margin-bottom: 30px;
+  }
+
+  .box-learn, .box-measure, .box-build{
+      background-color: aliceblue;
+      width: 90%;
+      height: 80%;
+      margin: 5%;
+  }
+
+  .text-form{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60px;
+      display: none;
+  }
+  .text-form .text{
+      height: 30px;
+      width: 80%;
+      font-size: 18px;
+      text-align: center;
+  } */
