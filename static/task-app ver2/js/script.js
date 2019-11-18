@@ -78,7 +78,7 @@ $(document).on("click",".add-btn", function () {
 });
 
 
-
+// Layer-A側
 $(document).on("click",".add-btn-1", function () {
 
     var deep = $(this).parent().data("deep")
@@ -126,7 +126,7 @@ $(document).on("click",".add-btn-1", function () {
         // 3.取得したアルファベットを１つ下げる
         var nextClassName = className.charCodeAt(0) + 1
         nextClassName = String.fromCodePoint(nextClassName)
-        console.log(nextClassName)
+        // console.log(nextClassName)
 
         $(this).addClass(`${nextClassName}`+i);
         i++;
@@ -135,9 +135,12 @@ $(document).on("click",".add-btn-1", function () {
 });
 
 
-$(document).on("click",".add-btn-1", function () {
-    console.log($(this).parents(".task-container").find(".layer-B").children("ul").children(".layer-1-b").attr("class"))
 
+
+// Layer-B側
+$(document).on("click",".add-btn-1", function () {
+    // console.log($(this).parents(".task-container").find(".layer-B").children("ul").children(".layer-1-b").attr("class"))
+//
     var deep = $(this).parent().data("deep")
 
     // 関数
@@ -155,38 +158,46 @@ $(document).on("click",".add-btn-1", function () {
 
           // 2.b.数字のみ取得
           // console.log(classNames)
-          var classNum = classNames.slice(1)[0]
-          // console.log(classNum)
+          var classNum = classNames.slice(1)
+          console.log(classNum)
 
-          // 3.a.取得したアルファベットを１つ下げる
+          // 3.a.取得したアルファベットを１つ下げる　(出力先指定用)
           var nextClassName = className.charCodeAt(0) + 4
           nextClassName = String.fromCodePoint(nextClassName)
           // console.log(nextClassName)
 
-          // 3.c.取得したアルファベットを2つ下げ、クラスに追加する
+          // 3.c.取得したアルファベットを2つ下げる　（クラスに追加用）
           var NextClassName = className.charCodeAt(0) + 5
           NextClassName = String.fromCodePoint(NextClassName)
           // console.log(NextClassName)
 
           // 3.b.nextClassName + classNum
           var nextClassNames = nextClassName + classNum
-          console.log(nextClassNames)
+          // console.log(nextClassNames)
 
           // 4.c.NextClassName + classNum
           // classVal = classNum + i
           // i++
+          // console.log(classNum)
+          // var classVal = classNum
 
-          var classVal = classNum
-          var NextClassNames = NextClassName + classVal
+          var NextClassNames = NextClassName + i
+          i++;
 
 
-          (`${NextClassNames}`).each(function(){
-              (`${NextClassNames}`).addClass(`${NextClassNames}` + i)
-              i++;
-          });
+          console.log(`${NextClassNames}`)
+          // console.log($(this).parents(".task-container").find(`${NextClassNames}`).attr("class"))
 
-          console.log(NextClassNames)
+          // $(`${NextClassNames}`).each(function(){
+          //     (`${NextClassNames}`).addClass(`${NextClassNames}` + i)
+          //     i++;
+          // });
 
+          // console.log(NextClassNames)
+          // (`.${nextClassNames}`)これをthisとして使える？？？
+          console.log((`.${nextClassNames}`))
+          var parentClassNames = $(`.${nextClassNames}`).parent("ul").prev().attr('class')
+          $(`.${parentClassNames}`).find(`.${nextClassNames}`).next("ul").append(html);
 
 
 
@@ -201,8 +212,14 @@ $(document).on("click",".add-btn-1", function () {
             </div>
             <ul class="layer-${deep + 1}-b"></ul>
         `;
-        // console.log($(this).parents(".task-container").attr("class"))
+        console.log(`${nextClassNames}`)
+        console.log($(`.${nextClassNames}`).next("ul").attr('class'))
+        $(`.${nextClassNames}`).next("ul").append(html);
 
+
+        // console.log($(this).parents(".task-container").attr("class"))
+        // console.log($(this).parents(".task-container").find(`.${nextClassNames}`).attr('class'))
+        // $(this).parents(".task-container").find(`.${nextClassNames}`).next("ul").append(html);
         // $(this).parents(".task-container").find(".layer-B").children("ul").children(".layer-1-b").append(html);
     }else if(deep === 2){
         var html = `
@@ -215,6 +232,14 @@ $(document).on("click",".add-btn-1", function () {
             </div>
             <ul class="layer-${deep + 1}-b"></ul>
         `;
+        // f1
+        console.log($(`.${nextClassNames}`).attr('class'))
+        // e1
+        console.log($(`.${parentClassNames}`).attr('class'))
+
+        console.log($(`.${parentClassNames}`).next("ul").find(`.${nextClassNames}`).attr('class'))
+        $(`.${parentClassNames}`).next("ul").children(`.${nextClassNames}`).next("ul").append(html);
+
         // $(this).parents(".task-container").find(".layer-1-b").children("ul").append(html);
         // $(this).parents(".task-container").find(".layer-1-b").children(".layer-2-b").append(html);
 
@@ -229,7 +254,11 @@ $(document).on("click",".add-btn-1", function () {
         `;
         // $(this).parents(".task-container").find(".layer-2-b").children("ul").append(html);
     }
-    $(`.${nextClassNames}`).next("ul").append(html);
+    // console.log(`${nextClassNames}`)
+    // console.log($(`.${nextClassNames}`).next("ul").attr('class'))
+    // $(`.${nextClassNames}`).next("ul").append(html);
+
+
 
 
 
