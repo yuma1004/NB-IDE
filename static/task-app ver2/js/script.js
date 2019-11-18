@@ -53,17 +53,15 @@ $(document).on("click",".add-btn", function () {
     $('.layer-A').children("ul").children('div').each(function(){
         $(this).addClass('a'+i);
         i++;
-
     });
 
 // layer-b
     var html = `
-        <div data-deep=11></div>
+        <div data-deep=1></div>
         <ul class="layer-1-b"></ul>
-
     `;
+    $('.layer-B').show();
     $('.layer-B').children("ul").append(html);
-
     $('.layer-B').css('padding','10px 10px');
     $('.layer-B').css('height','700px');
     $('.layer-B').css('overflow','scroll');
@@ -73,100 +71,11 @@ $(document).on("click",".add-btn", function () {
     var i = 1;
 
     $('.layer-B').children("ul").children("div").each(function(){
-        $(this).addClass('a'+i);
+        $(this).addClass('e'+i);
         i++;
-
     });
 
 });
-
-
-// 動的にclassを付与
-// 親のクラスを子要素のクラスに付与する
-// o は add-btn-1
-// function addclassNames(o){
-//
-//     console.log(o.parent().data("deep"))
-//
-//     // 1.親クラスを取得
-//     var classNames = o.parent().attr('class')
-//     console.log(classNames)
-//
-//     // 2.親クラスの末尾を取得
-//     classNames = classNames.split(' ')[0]
-//     // console.log(classNames)
-//
-//     // 3.a.アルファベットのみ取得
-//     var className = classNames.split(' ').slice(-1)[0]
-//     className = className.slice(0)[0]
-//     // console.log(className)
-//
-//     // 4.a.取得したアルファベットを１つ下げる
-//     var nextClassName = className.charCodeAt(0) + 1
-//     nextClassName = String.fromCodePoint(nextClassName)
-//     // console.log(nextClassName)
-//
-//
-//
-//     var object = o.parent().next("ul").children("div")
-//     // object は次のlayerのdiv要素 object = o.parent().next("ul").children("div")
-//
-//
-//   // 親クラス参照　アルファベットを１つ下げて付与
-//     var i = 1;
-//
-//     o.parent().next("ul").children("div").each(function(){
-//
-//         object.addClass(`${nextClassName}`+i);
-//
-//
-//     });
-//
-//
-//   // 兄弟クラス参照　末尾の数字に1を足して付与
-//     // object.next("ul").each(function(){
-//     //
-//     //   object.addClass(`${nextClassName}`+i);
-//     //   i++;
-//     //
-//     // });
-//
-// }
-// addclassNames($(this));
-
-// object.each(function(){
-//
-//   // 1.親クラスを取得
-//   var classNames = object.attr('class')
-//   // console.log(classNames)
-//
-//   // 2.親クラスの末尾を取得
-//   classNames = classNames.split(' ')[0]
-//   // console.log(classNames)
-//
-//   // 3.a.アルファベットのみ取得
-//   var className = classNames.split(' ').slice(-1)[0]
-//   className = className.slice(0)[0]
-//   console.log(className)
-//
-//   // 3.b.数字のみ取得
-//   var lastclassName = classNames.split(' ').slice(0)[0]
-//   var classNameNum = lastclassName.slice(0)[1]
-//   console.log(classNameNum)
-//
-//   // 4.b.取得した数字を１つ上げる
-//   var i = 1;
-//   var nextClassNameNum = parseInt(classNameNum) + parseInt(i);
-//   i++
-//   console.log(nextClassNameNum)
-//
-//   var nextClassNames = className + nextClassNameNum;
-//   console.log(nextClassNames)
-//
-//   object.addClass(`${nextClassNames}`);
-//
-// })
-
 
 
 
@@ -201,77 +110,144 @@ $(document).on("click",".add-btn-1", function () {
 
 
 // 関数
-    var i = 1;
-      console.log($(this))
+      var i = 1;
+
       $(this).parent().next("ul").children("div").each(function(){
 
-      // 1.親クラスを取得
-      // console.log($(this))
-      // console.log($(this).parent().prev().attr("class"))
-      var classNames = $(this).parent().prev().attr("class")
-      // console.log(classNames)
+        // 1.親クラスを取得
+        var classNames = $(this).parent().prev().attr("class")
+        // console.log(classNames)
 
-      // 2.親クラスの末尾を取得
-      // classNames = classNames.split(' ')[0]
-      // console.log(classNames)
+        // 2.アルファベットのみ取得
+        var className = classNames.split(' ').slice(-1)[0]
+        className = className.slice(0)[0]
+        // console.log(className)
 
-      // 3.a.アルファベットのみ取得
-      var className = classNames.split(' ').slice(-1)[0]
-      className = className.slice(0)[0]
-      // console.log(className)
-
-      // 4.a.取得したアルファベットを１つ下げる
-      var nextClassName = className.charCodeAt(0) + 1
-      nextClassName = String.fromCodePoint(nextClassName)
-      console.log(nextClassName)
+        // 3.取得したアルファベットを１つ下げる
+        var nextClassName = className.charCodeAt(0) + 1
+        nextClassName = String.fromCodePoint(nextClassName)
+        console.log(nextClassName)
 
         $(this).addClass(`${nextClassName}`+i);
         i++;
 
     });
+});
+
+
+$(document).on("click",".add-btn-1", function () {
+    console.log($(this).parents(".task-container").find(".layer-B").children("ul").children(".layer-1-b").attr("class"))
+
+    var deep = $(this).parent().data("deep")
+
+    // 関数
+          var i = 1
+          // $(this)からe+iのクラスを取得
+
+          // 1.親クラスを取得
+          var classNames = $(this).parent().attr('class')
+          // console.log(classNames)
+
+          // 2.a.アルファベットのみ取得
+          var className = classNames.split(' ').slice(-1)[0]
+          className = className.slice(0)[0]
+          // console.log(className)
+
+          // 2.b.数字のみ取得
+          // console.log(classNames)
+          var classNum = classNames.slice(1)[0]
+          // console.log(classNum)
+
+          // 3.a.取得したアルファベットを１つ下げる
+          var nextClassName = className.charCodeAt(0) + 4
+          nextClassName = String.fromCodePoint(nextClassName)
+          // console.log(nextClassName)
+
+          // 3.c.取得したアルファベットを2つ下げ、クラスに追加する
+          var NextClassName = className.charCodeAt(0) + 5
+          NextClassName = String.fromCodePoint(NextClassName)
+          // console.log(NextClassName)
+
+          // 3.b.nextClassName + classNum
+          var nextClassNames = nextClassName + classNum
+          console.log(nextClassNames)
+
+          // 4.c.NextClassName + classNum
+          // classVal = classNum + i
+          // i++
+
+          var classVal = classNum
+          var NextClassNames = NextClassName + classVal
+
+
+          (`${NextClassNames}`).each(function(){
+              (`${NextClassNames}`).addClass(`${NextClassNames}` + i)
+              i++;
+          });
+
+          console.log(NextClassNames)
 
 
 
 
-    if(deep === 11){
+    if(deep === 1){
         var html = `
-            <div data-deep=${deep + 1}>
+            <div class="${NextClassNames}" data-deep=${deep + 1}>
                 <input class="check-1" type="checkbox">
                 <input type="text" class="text" placeholder="layer-2=mission-1">
                 <input class="add-btn-1" type="button" value="+" >
                 <button class="remove${deep + 1}">-</button>
                 <p class="accordion article-title"></p>
             </div>
-            <ul class="layer-${deep + 1}-a"></ul>
+            <ul class="layer-${deep + 1}-b"></ul>
         `;
-        console.log($(this).parents(".task-container").attr("class"))
-        $(this).parents(".task-container").find(".layer-B").children(".layer-1-b").append(html);
-    }else if(deep === 12){
+        // console.log($(this).parents(".task-container").attr("class"))
+
+        // $(this).parents(".task-container").find(".layer-B").children("ul").children(".layer-1-b").append(html);
+    }else if(deep === 2){
         var html = `
-            <div data-deep=${deep + 1}>
+            <div class="${NextClassNames}" data-deep=${deep + 1}>
                 <input class="check-1" type="checkbox">
                 <input type="text" class="text" placeholder="layer-2=mission-1">
                 <input class="add-btn-1" type="button" value="+" >
                 <button class="remove${deep + 1}">-</button>
                 <p class="accordion article-title"></p>
             </div>
-            <ul class="layer-${deep + 1}-a"></ul>
+            <ul class="layer-${deep + 1}-b"></ul>
         `;
-        $(this).parents(".task-container").find(".layer-1-b").children(".layer-2-b").append(html);
+        // $(this).parents(".task-container").find(".layer-1-b").children("ul").append(html);
+        // $(this).parents(".task-container").find(".layer-1-b").children(".layer-2-b").append(html);
 
-    }else if(deep === 13){
+    }else if(deep === 3){
         var html = `
-            <div data-deep=${deep + 1}>
+            <div class="${NextClassNames}" data-deep=${deep + 1}>
                 <input class="check" type="checkbox" name="check">
                 <!-- 入力連動 -->
                 <input type="text" class="text text-4" placeholder="layer-4=target">
                 <button class="remove${deep + 1}">-</button>
             </div>
         `;
-        $(this).parents(".task-container").find(".layer-2-b").children(".layer-3-b").append(html);
+        // $(this).parents(".task-container").find(".layer-2-b").children("ul").append(html);
     }
+    $(`.${nextClassNames}`).next("ul").append(html);
 
 
+
+        //
+        // $(`.${nextClassNames}`).next("ul").addClass(`${nextClassNames}`);
+        // $(`.${nextClassNames}`).next("ul").append(html);
+
+        // // 3.aをeに変える
+        // var eclassName = "e"+aclassName.slice(1)
+        // // console.log("e"+aclassName.slice(1))
+        // // console.log(eclassName)
+        //
+
+        //
+        // // 3.アルファベットのみ取得
+        // var aclassName = classNames.split(' ').slice(-1)[0]
+        // className = className.slice(0)[0]
+        // // console.log(aclassName)
 
 
 

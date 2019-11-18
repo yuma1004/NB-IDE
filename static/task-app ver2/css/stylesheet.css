@@ -181,6 +181,7 @@ h3{
 
 
 .layer-B{
+    display: none;
     float: left;
     width: 380px;
     margin-top: 10px;
