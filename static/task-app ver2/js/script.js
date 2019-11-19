@@ -37,8 +37,9 @@ $(document).on("click",".add-btn", function () {
             <input class="add-btn-1 , add-btn-layer-2" type="button" value="+" >
             <button class="remove1">-</button>
             <p class="accordion article-title"></p>
+            <ul class="layer-1-a"></ul>
         </div>
-        <ul class="layer-1-a"></ul>
+
     `;
     $('.layer-A').show();
     $('.layer-A').children("ul").append(html);
@@ -92,8 +93,9 @@ $(document).on("click",".add-btn-1", function () {
                 <input class="add-btn-1 , add-btn-layer-${deep + 2}" type="button" value="+" >
                 <button class="remove${deep + 1}">-</button>
                 <p class="accordion article-title"></p>
+                <ul></ul>
             </div>
-            <ul class="layer-${deep + 1}-a"></ul>
+
         `;
 
     }else if(deep === 3){
@@ -106,17 +108,18 @@ $(document).on("click",".add-btn-1", function () {
             </div>
         `;
     }
-    $(this).parent().next("ul").append(html);
+    // console.log($(this).parent().children("ul"))
+    $(this).parent().children("ul").append(html);
     // addclassNames($(this));
 
 
 // 関数
       var i = 1;
-
-      $(this).parent().next("ul").children("div").each(function(){
+      // console.log($(this))
+      $(this).parent().children("ul").children("div").each(function(){
 
         // 1.親クラスを取得
-        var classNames = $(this).parent().prev().attr("class")
+        var classNames = $(this).parent().parent().attr("class")
         // console.log(classNames)
 
         // 2.アルファベットのみ取得
@@ -142,113 +145,6 @@ $(document).on("click",".add-btn-1", function () {
 
 
 // // Layer-B側
-// $(document).on("click",".add-btn-1", function () {
-//
-// // 関数
-//     // $(this)からe+iのクラスを取得
-//     // 1.親クラスを取得
-//     var aclassName = $(this).parent().attr('class')
-//     console.log(aclassName)
-//     // a1をe1に変える
-//
-//     var eclassName = "e"+aclassName.slice(1)
-//
-//     var i = 1;
-//
-//       $(`.${eclassName}`).children(".layer-1-B").children(".layer-2-b").each(function(){
-//           $(this).addClass(`${eclassName}`);
-//           $(this).addClass('f'+i);
-//           i++;
-//
-//       });
-//
-//
-//     var deep = $(this).parent().data("deep")
-//
-//
-//     if(deep === 1){
-//         var html = `
-//             <div class="layer-2-b" data-deep=${deep + 1}>
-//                 <input class="check-1" type="checkbox">
-//                 <input type="text" class="text" placeholder="layer-2=mission-1">
-//                 <input class="add-btn-1" type="button" value="+" >
-//                 <button class="remove${deep + 1}">-</button>
-//                 <p class="accordion article-title"></p>
-//                 <ul class="layer-${deep + 1}-B"></ul>
-//             </div>
-//
-//         `;
-//         console.log(`${eclassName}`)
-//         console.log($(`.${eclassName}`).children("ul").attr('class'))
-//         $(`.${eclassName}`).children("ul").append(html);
-//
-//
-//         // console.log($(this).parents(".task-container").attr("class"))
-//         // console.log($(this).parents(".task-container").find(`.${nextClassNames}`).attr('class'))
-//         // $(this).parents(".task-container").find(`.${nextClassNames}`).next("ul").append(html);
-//         // $(this).parents(".task-container").find(".layer-B").children("ul").children(".layer-1-b").append(html);
-//     }else if(deep === 2){
-//         var html = `
-//             <div class="layer-3-b" data-deep=${deep + 1}>
-//                 <input class="check-1" type="checkbox">
-//                 <input type="text" class="text" placeholder="layer-2=mission-1">
-//                 <input class="add-btn-1" type="button" value="+" >
-//                 <button class="remove${deep + 1}">-</button>
-//                 <p class="accordion article-title"></p>
-//             </div>
-//             <ul class="layer-${deep + 1}-B"></ul>
-//         `;
-//         // f1
-//         console.log($(`.${nextClassNames}`).attr('class'))
-//         // e1
-//         console.log($(`.${parentClassNames}`).attr('class'))
-//
-//         console.log($(`.${parentClassNames}`).next("ul").find(`.${nextClassNames}`).attr('class'))
-//         $(`.${parentClassNames}`).next("ul").children(`.${nextClassNames}`).next("ul").append(html);
-//
-//         // $(this).parents(".task-container").find(".layer-1-b").children("ul").append(html);
-//         // $(this).parents(".task-container").find(".layer-1-b").children(".layer-2-b").append(html);
-//
-//     }else if(deep === 3){
-//         var html = `
-//             <div class="layer-4-b data-deep=${deep + 1}>
-//                 <input class="check" type="checkbox" name="check">
-//                 <!-- 入力連動 -->
-//                 <input type="text" class="text text-4" placeholder="layer-4=target">
-//                 <button class="remove${deep + 1}">-</button>
-//             </div>
-//         `;
-//         // $(this).parents(".task-container").find(".layer-2-b").children("ul").append(html);
-//     }
-//     // console.log(`${nextClassNames}`)
-//     // console.log($(`.${nextClassNames}`).next("ul").attr('class'))
-//     // $(`.${nextClassNames}`).next("ul").append(html);
-//
-//
-//
-//         //
-//         // $(`.${nextClassNames}`).next("ul").addClass(`${nextClassNames}`);
-//         // $(`.${nextClassNames}`).next("ul").append(html);
-//
-//         // // 3.aをeに変える
-//         // var eclassName = "e"+aclassName.slice(1)
-//         // // console.log("e"+aclassName.slice(1))
-//         // // console.log(eclassName)
-//         //
-//
-//         //
-//         // // 3.アルファベットのみ取得
-//         // var aclassName = classNames.split(' ').slice(-1)[0]
-//         // className = className.slice(0)[0]
-//         // // console.log(aclassName)
-//
-//
-//
-//
-//
-//
-// });
-
 
 // layer-2-b
 $(document).on("click",".add-btn-layer-2", function () {
@@ -259,14 +155,8 @@ $(document).on("click",".add-btn-layer-2", function () {
         <ul class="layer-2-B"></ul>
     `;
 
-    // --------------------超重要----------------------------------
-    // 動的なclass e に合わせて出力　append
-    // 動的な a1 を取得しaを消してeに変更
-    // layer1-b子要素ulのclass .layer-2-Bに .layer-2-bを出力
-
-
     var aclassVal = $(this).parent().attr('class')
-    console.log(aclassVal)
+    // console.log(aclassVal)
     // a1をe1に変える
 
     var eclassName = "e"+aclassVal.slice(1)
@@ -282,7 +172,7 @@ $(document).on("click",".add-btn-layer-2", function () {
     var i = 1;
 
     $(`.${eclassName}`).children(".layer-1-B").children(".layer-2-b").each(function(){
-        $(this).addClass(`${eclassName}`);
+        // $(this).addClass(`${eclassName}`);
         $(this).addClass('f'+i);
         i++;
 
@@ -301,12 +191,7 @@ $(document).on("click",".add-btn-layer-3", function () {
         <ul class="layer-3-B"></ul>
     `;
 
-    // --------------------超重要----------------------------------
-    // layer2-b子要素ulのclass .layer-3-Bに .layer-3-bを出力
-
-
-
-    var aclassVal = $(this).parent().parent().prev().attr('class')
+    var aclassVal = $(this).parent().parent().parent().attr('class')
     console.log(aclassVal)
     // a1をe1に変える
 
@@ -320,8 +205,7 @@ $(document).on("click",".add-btn-layer-3", function () {
     var fclassName = "f"+bclassVal.slice(1)
     console.log(fclassName)
 
-    console.log($(`.${eclassName} .${fclassName}`).children(".layer-2-B"))
-    $(`.${eclassName} .${fclassName}`).children(".layer-2-B").append(html);
+    $(`.${eclassName}`).find(`.${fclassName}`).children(".layer-2-B").append(html);
     // ------------------------------------------------------
 
     // .layer-3-bに動的にg+iを付与
@@ -331,8 +215,8 @@ $(document).on("click",".add-btn-layer-3", function () {
     var i = 1;
 
     $(`.${eclassName} .${fclassName}`).children(".layer-2-B").children(".layer-3-b").each(function(){
-        $(this).addClass(`${eclassName}`);
-        $(this).addClass(`${fclassName}`);
+        // $(this).addClass(`${eclassName}`);
+        // $(this).addClass(`${fclassName}`);
         $(this).addClass('g'+i);
         i++;
 
@@ -360,14 +244,14 @@ $(document).on("click",".add-btn-layer-4", function () {
 
 
     // 親クラスを取得
-    var aclassVal = $(this).parent().parent().parent().prev().attr('class')
+    var aclassVal = $(this).parent().parent().parent().parent().parent().attr('class')
     console.log(aclassVal)
     // a1をe1に変える
 
     var eclassName = "e"+aclassVal.slice(1)
     console.log(eclassName)
 
-    var bclassVal = $(this).parent().parent().prev().attr('class')
+    var bclassVal = $(this).parent().parent().parent().attr('class')
     console.log(bclassVal)
     // b1をf1に変える
 
@@ -382,7 +266,7 @@ $(document).on("click",".add-btn-layer-4", function () {
     console.log(gclassName)
 
 
-    $(`.${eclassName} .${fclassName} .${gclassName}`).children(".layer-3-B").append(html);
+    $(`.${eclassName}`).find(`.${gclassName}`).children(".layer-3-B").append(html);
     // ------------------------------------------------------
     $('.add-btn-3').css('float','right');
 
@@ -395,9 +279,9 @@ $(document).on("click",".add-btn-layer-4", function () {
     // $(`.${eclassName} .${fclassName}`).children(".layer-3-B").children(".layer-3-b").addClass(`${eclassname}`);
 
     $(`.${eclassName} .${fclassName} .${gclassName}`).children(".layer-3-B").children(".layer-4-b").each(function(){
-        $(this).addClass(`${eclassName}`);
-        $(this).addClass(`${fclassName}`);
-        $(this).addClass(`${gclassName}`);
+        // $(this).addClass(`${eclassName}`);
+        // $(this).addClass(`${fclassName}`);
+        // $(this).addClass(`${gclassName}`);
         $(this).addClass('h'+i);
         i++;
 
@@ -443,369 +327,412 @@ $(document).on("click",".add-btn-layer-4", function () {
 //
 // });
 //
-//
-//
-//
-// // remove機能連動
-// // remove1
-// $(document).on('click', '.remove1', function() {
-//
-//     p = $(this).parents(".layer-A")
-//     // console.log(p)
-//     x = $(this).parents(".task-container").find(".layer-b")
-//     console.log(x)
-//
-//
-//     //  layer-1-b e+iをremove
-//     // console.log($(this).parent().attr('class'))
-//     var aclassName = $(this).parent().parent().attr('class').split(' ').slice(-1)[0]
-//     // console.log(aclassName)
-//
-//     // 動的e+i 取得
-//     var eclassName = "e"+aclassName.slice(1)
-//     // console.log(eclassName)
-//     console.log($(this).parents(".task-container").find(".layer-b").children(`.${eclassName}`))
-//     $(this).parents(".task-container").find(".layer-b").children(`.${eclassName}`).remove();
-//
-//     // layer-1-a a+iをremove
-//     $(this).parent().parent().remove();
-//
-//
-//
-//     // resetClass
-//     resetClass(p)
-//
-//     function resetClass(object) {
-//         // aを取得
-//         console.log(object.attr('class'))
-//         var classVal = object.attr('class')
-//
-//         // 末尾のクラスを取る
-//         var className = classVal.split(' ').slice(0)[0][1]
-//         console.log(className)
-//
-//         i = 1
-//         console.log(object)
-//         object.children('.layer-a').each(function () {
-//
-//             console.log($(this).attr('class'))
-//             console.log($(this).attr('class').split(' ').slice(-1)[0])
-//
-//             $(this).removeClass($(this).attr('class').split(' ').slice(-1)[0])
-//
-//             console.log((className + i))
-//
-//             $(this).addClass(className + i)
-//
-//             i++
-//
-//         })
-//     }
-//
-//     // eresetClass
-//     eresetClass(x)
-//
-//     function eresetClass(object) {
-//         console.log(object.parent().find(".layer-1-b").attr('class'))
-//         console.log(object.find(".layer-1-b").attr('class'))
-//
-//         i = 1
-//
-//         object.find(".layer-1-b").each(function () {
-//
-//             console.log($(this).attr('class'))
-//             console.log($(this).attr('class').split(' ').slice(-1)[0])
-//
-//             $(this).removeClass($(this).attr('class').split(' ').slice(-1)[0])
-//
-//             var eclassName = "e"
-//             $(this).addClass(eclassName + i)
-//
-//             i++
-//
-//         })
-//
-//     }
-//
-//
-// });
-
-
-
-// // remove2
-// $(document).on('click', '.remove2', function() {
-
-//     p = $(this).parents(".layer-1-a").children("ul")
-
-//     x = $(this).parents(".task-container").find(".layer-2-B")
-
-
-//     //  layer-2-b e+i f+iをremove
-//     // console.log($(this).parent().attr('class'))
-//     var aclassName = $(this).parent().parent().attr('class').split(' ').slice(-2)[0]
-//     // console.log(aclassName)
-//     var bclassName = $(this).parent().parent().attr('class').split(' ').slice(-1)[0]
-//     // console.log(bclassName)
 
-//     // 動的e+i 取得
-//     var eclassName = "e"+aclassName.slice(1)
-//     // console.log(eclassName)
 
-//     // 動的f+i 取得
-//     var fclassName = "f"+bclassName.slice(1)
-//     // console.log(fclassName)
 
-//     // console.log($(this).parents(".task-container").find(`.${eclassName} .${fclassName}`).attr('class'))
-//     $(this).parents(".task-container").find(`.${eclassName} .${fclassName}`).remove();
+// remove機能連動
+// remove1 aとeに関して
+$(document).on('click', '.remove1', function() {
+    // o = this remove1
+    o = $(this)
 
+    // p ,object = ul
+    p = o.parent().parent()
+    console.log(p)
 
-//     // layer-2-a をremove
-//     // console.log($(this).parent().parent().attr('class'))
-//     $(this).parent().parent().remove();
+    x = o.parents(".task-container").find(".layer-B").children("ul")
+    console.log(x)
 
-//     // resetClass
-//     resetClass(p)
 
-//     function resetClass(object) {
+    // 1.a+i 取得
+    var aClassNames = o.parent().attr('class').split(' ').slice(-1)[0]
+    console.log(aClassNames)
 
-//         var classVal = object.parent().attr('class')
+    // 2.アルファベットのみ取得
+    var aClassName = aClassNames.split(' ').slice(-1)[0]
+    aClassName = aClassNames.slice(0)[0]
+    console.log(aClassName)
 
-//         // 末尾のクラスを取る
-//         var lastclassName = classVal.split(' ').slice(-1)[0][0]
-//         console.log(aclassName)
+    // 2.数字のみ取得
+    var aClassNum = aClassNames.slice(1)
+    console.log(aClassNum)
 
-//         // 末尾のクラスをbに変える
-//         className = String.fromCharCode(lastclassName.charCodeAt(0) + 1)
-//         console.log(className)
+    // 3.e+i 取得
+    // aをeに変える
+    var nextClassName = String.fromCharCode(aClassName.charCodeAt(0) + 4)
+    console.log(nextClassName)
 
-//         i = 1
+    var nextClassNames = nextClassName + aClassNum
+    console.log(nextClassNames)
+    // console.log(eclassName)
 
-//         console.log(object.attr('class'))
-//         object.find('.layer-2-a').each(function () {
-//             console.log($(this).attr('class'))
-//             $(this).removeClass($(this).attr('class').split(' ').slice(-1)[0])
+    // 4.layer-1-b e+iをremove
+    x.children(`.${nextClassNames}`).remove();
 
-//             console.log((className + i))
+    // 5.layer-1-a a+iをremove
+    o.parent().remove();
 
-//             $(this).addClass(className + i)
+    // 6.a_resetClass
+    a_resetClass(p)
 
+    function a_resetClass(object) {
 
-//             i++
-//         })
+        i = 1
 
-//     }
+        object.children("div").each(function () {
 
+          $(this).removeClass($(this).attr('class').split(' ').slice(-1)[0])
 
-//     // fresetClass
-//     fresetClass(x)
+          $(this).addClass(aClassName + i)
 
-//     function fresetClass(object) {
-//         console.log(object.parent().find(".layer-2-b").attr('class'))
-//         console.log(object.find(".layer-2-b").attr('class'))
+          i++;
 
-//         i = 1
+        })
+    }
 
-//         object.find(".layer-2-b").each(function () {
+    // 7.e_resetClass
+    e_resetClass(x)
 
-//             console.log($(this).attr('class'))
-//             console.log($(this).attr('class').split(' ').slice(-1)[0])
+    function e_resetClass(object) {
 
-//             $(this).removeClass($(this).attr('class').split(' ').slice(-1)[0])
+        i = 1
+        console.log(object.parent())
+        object.find(".layer-1-b").each(function () {
 
-//             var fclassName = "f"
-//             $(this).addClass(fclassName + i)
+            $(this).removeClass($(this).attr('class').split(' ').slice(-1)[0])
 
-//             i++
+            // var eclassName = "e"
+            $(this).addClass(nextClassName + i)
 
-//         })
+            i++
 
-//     }
+        })
+    }
 
+});
 
-// });
 
+$(document).on('click', '.remove2', function() {
+    // o = this remove2
+    o = $(this)
 
-// // remove3
-// $(document).on('click', '.remove3', function() {
+    p = o.parent().parent()
+    console.log(p)
 
-//     p = $(this).parents(".layer-2-a").children("ul")
-//     console.log(p)
+    x = o.parents(".task-container").find(".layer-1-b").children("ul")
+    console.log(x)
 
-//     x = $(this).parents(".task-container").find(".layer-2-b").children(".layer-3-B")
-//     console.log(x)
+    var aClassNames = $(this).parent().parent().parent().attr('class')
 
-//     //  layer-3-b e+i f+i g+iをremove
-//     // console.log($(this).parent().parent().attr('class').split(' ').slice(-3)[0])
 
-//     var aclassName = $(this).parent().parent().attr('class').split(' ').slice(-3)[0]
-//     // console.log(aclassName)
-//     var bclassName = $(this).parent().parent().attr('class').split(' ').slice(-2)[0]
-//     // console.log(bclassName)
-//     var cclassName = $(this).parent().parent().attr('class').split(' ').slice(-1)[0]
-//     // console.log(cclassName)
+    // 1.b+i 取得
+    var bclassNames = o.parent().attr('class').split(' ').slice(-1)[0]
+    console.log(bclassNames)
 
+    // 2.アルファベットのみ取得
+    var bclassName = bclassNames.split(' ').slice(-1)[0]
+    bclassName = bclassNames.slice(0)[0]
+    console.log(bclassName)
 
-//     // 動的e+i 取得
-//     var eclassName = "e"+aclassName.slice(1)
-//     // console.log(eclassName)
+    // 2.数字のみ取得
+    var bclassNum = bclassNames.slice(1)
+    console.log(bclassNum)
 
-//     // 動的f+i 取得
-//     var fclassName = "f"+bclassName.slice(1)
-//     // console.log(fclassName)
+    // 3.f+i 取得
+    // bをfに変える
+    var fclassName = String.fromCharCode(bclassName.charCodeAt(0) + 4)
+    console.log(fclassName)
 
-//     // 動的g+i 取得
-//     var gclassName = "g"+cclassName.slice(1)
-//     // console.log(gclassName)
+    var fclassNames = fclassName + bclassNum
+    console.log(fclassNames)
+    // console.log(eclassName)
 
 
-//     // console.log($(this).parents(".task-container").find(".layer-3-B").children(`.${eclassName} .${fclassName} .${gclassName}`).attr('class'))
-//     $(this).parents(".task-container").find(".layer-3-B").children(`.${eclassName} .${fclassName} .${gclassName}`).remove();
+    var eclassName = "e"+aClassNames.slice(1)
+    console.log(eclassName)
 
 
-//     // layer-3-a をremove
-//     console.log($(this).parent().parent())
-//     $(this).parent().parent().remove();
+    // 4.layer-2-b f+iをremove
+    console.log($(`.${eclassName}`).find(`.${fclassNames}`))
+    $(`.${eclassName}`).find(`.${fclassNames}`).remove();
 
-//     resetClass(p)
+    // 5.layer-2-a b+iをremove
+    o.parent().remove();
 
-//     function resetClass(object) {
 
-//         // console.log(object)
+    // 2.aのアルファベットのみ取得
+    var aClassName = aClassNames.split(' ').slice(-1)[0]
+    aClassName = aClassNames.slice(0)[0]
+    console.log(aClassName)
 
-//         var classVal = object.parent().attr('class')
+    // 2.aをbに変える
+    var bClassName = String.fromCharCode(aClassName.charCodeAt(0) + 1)
+    console.log(bClassName)
 
-//         // 末尾のクラスを取る
-//         var lastclassName = classVal.split(' ').slice(-1)[0][0]
-//         console.log(lastclassName)
 
-//         // 末尾のクラスをcに変える
-//         className = String.fromCharCode(lastclassName.charCodeAt(0) + 1)
-//         console.log(className)
+    // 6.b_resetClass
+    b_resetClass(p)
 
-//         i = 1
+    function b_resetClass(object) {
 
-//         console.log(object.find('.layer-3-a').attr('class'))
-//         object.find('.layer-3-a').each(function () {
-//             console.log($(this).attr('class'))
+        i = 1
 
-//             $(this).removeClass($(this).attr('class').split(' ').slice(-1)[0])
+        object.children("div").each(function () {
 
-//             console.log((className + i))
+          $(this).removeClass($(this).attr('class').split(' ').slice(-1)[0])
 
-//             $(this).addClass(className + i)
+          $(this).addClass(bClassName + i)
 
+          i++;
 
-//             i++
-//         })
+        })
+    }
 
-//     }
 
+    // 7.e_resetClass
+    f_resetClass(x)
 
-//     // gresetClass
-//     gresetClass(x)
+    function f_resetClass(object) {
 
-//     function gresetClass(object) {
+        i = 1
+        // console.log(object.find(`.${nextClassNames}`).attr("class"))
 
+        $(`.${eclassName}`).children(".layer-1-B").children(".layer-2-b").each(function(){
 
+          $(this).removeClass($(this).attr('class').split(' ').slice(-1)[0])
 
-//         // console.log(object.children(".layer-3-b").attr('class'))
+          // var eclassName = "e"
+          $(this).addClass(fclassName + i)
 
+          i++
 
-//         i = 1
+        })
 
-//         console.log(object.children(".layer-3-b").attr('class'))
-//         object.children(`.${eclassName} .${fclassName}`).each(function () {
+    }
 
-//             console.log($(this).attr('class'))
-//             console.log($(this).attr('class').split(' ').slice(-1)[0])
+});
 
-//             $(this).removeClass($(this).attr('class').split(' ').slice(-1)[0])
 
-//             var gclassName = "g"
-//             $(this).addClass(gclassName + i)
 
-//             i++
+$(document).on('click', '.remove3', function() {
+    // o = this remove3
+    o = $(this)
 
-//         })
+    p = o.parent().parent()
+    console.log(p)
 
-//     }
+    x = o.parents(".task-container").find(".layer-2-b").children("ul")
+    console.log(x)
 
+    // 親要素をたどってaを取得
+    var aClassNames = $(this).parent().parent().parent().parent().parent().attr('class')
+    console.log(aClassNames)
 
-// });
+    // 親要素をたどってbを取得
+    var bClassNames = $(this).parent().parent().parent().attr('class')
+    console.log(bClassNames)
 
 
-// // remove4
-// $(document).on('click', '.remove4', function() {
+    // 1.c+i 取得
+    var cclassNames = o.parent().attr('class').split(' ').slice(-1)[0]
+    console.log(cclassNames)
 
-//     p = $(this).parents(".layer-3-a").children("ul")
+    // 2.アルファベットのみ取得
+    var cclassName = cclassNames.split(' ').slice(-1)[0]
+    cclassName = cclassNames.slice(0)[0]
+    console.log(cclassName)
 
-//     x = $(this).parents(".task-container").find(".layer-4-B")
+    // 2.数字のみ取得
+    var cclassNum = cclassNames.slice(1)
+    console.log(cclassNum)
 
+    // 3.f+i 取得
+    // bをfに変える
+    var gclassName = String.fromCharCode(cclassName.charCodeAt(0) + 4)
+    console.log(gclassName)
 
-//     //  layer-3-b e+i f+i g+i h+iをremove
-//     console.log($(this).parent().parent().attr('class').split(' ').slice(-4)[0])
+    var gclassNames = gclassName + cclassNum
+    console.log(gclassNames)
+    // console.log(eclassName)
 
-//     var aclassName = $(this).parent().parent().attr('class').split(' ').slice(-4)[0]
-//     // console.log(aclassName)
-//     var bclassName = $(this).parent().parent().attr('class').split(' ').slice(-3)[0]
-//     // console.log(bclassName)
-//     var cclassName = $(this).parent().parent().attr('class').split(' ').slice(-2)[0]
-//     // console.log(cclassName)
-//     var dclassName = $(this).parent().parent().attr('class').split(' ').slice(-1)[0]
-//     // console.log(dclassName)
+    // aからeを取得
+    var eclassName = "e"+aClassNames.slice(1)
+    console.log(eclassName)
 
+    // bからfを取得
+    var fclassName = "f"+bClassNames.slice(1)
+    console.log(fclassName)
 
-//     // 動的e+i 取得
-//     var eclassName = "e"+aclassName.slice(1)
-//     // console.log(eclassName)
 
-//     // 動的f+i 取得
-//     var fclassName = "f"+bclassName.slice(1)
-//     // console.log(fclassName)
+    // 4.layer-2-b f+iをremove
+    console.log($(`.${eclassName}`).find(`.${gclassNames}`))
+    $(`.${eclassName}`).find(`.${gclassNames}`).remove();
 
-//     // 動的g+i 取得
-//     var gclassName = "g"+cclassName.slice(1)
-//     // console.log(gclassName)
+    // 5.layer-2-a b+iをremove
+    o.parent().remove();
 
-//     // 動的h+i 取得
-//     var hclassName = "h"+dclassName.slice(1)
-//     // console.log(hclassName)
 
+    // 2.aのアルファベットのみ取得
+    var bClassName = bClassNames.split(' ').slice(-1)[0]
+    bClassName = bClassNames.slice(0)[0]
+    console.log(bClassName)
 
-//     console.log($(this).parents(".task-container").find(`.${eclassName} .${fclassName} .${gclassName} .${hclassName}`).attr('class'))
-//     $(this).parents(".task-container").find(`.${eclassName} .${fclassName} .${gclassName} .${hclassName}`).remove();
+    // 2.aをbに変える
+    var cClassName = String.fromCharCode(bClassName.charCodeAt(0) + 1)
+    console.log(cClassName)
 
 
-//     // layer-4-a をremove
-//     $(this).parent().parent().remove();
+    // 6.b_resetClass
+    c_resetClass(p)
 
-//     resetClass(p)
+    function c_resetClass(object) {
 
-//     function resetClass(object) {
+        i = 1
 
-//         var classVal = object.parent().attr('class')
+        object.children("div").each(function () {
 
-//         // 末尾のクラスを取る
-//         var lastclassName = classVal.split(' ').slice(-1)[0][0]
-//         console.log(lastclassName)
+          $(this).removeClass($(this).attr('class').split(' ').slice(-1)[0])
 
-//         // 末尾のクラスをcに変える
-//         className = String.fromCharCode(lastclassName.charCodeAt(0) + 1)
-//         console.log(className)
+          $(this).addClass(cClassName + i)
 
-//         i = 1
+          i++;
 
-//         console.log(object.attr('class'))
-//         object.find('.layer-4-a').each(function () {
-//             console.log($(this).attr('class'))
-//             $(this).removeClass($(this).attr('class').split(' ').slice(-1)[0])
+        })
+    }
 
-//             console.log((className + i))
 
-//             $(this).addClass(className + i)
+    // 7.e_resetClass
+    g_resetClass(x)
 
-//             i++
-//         })
+    function g_resetClass(object) {
 
-//     }
-// });
+        i = 1
+        // console.log(object.find(`.${nextClassNames}`).attr("class"))
+
+        $(`.${eclassName}`).find(`.${fclassName}`).children(".layer-2-B").children(".layer-3-b").each(function(){
+
+          $(this).removeClass($(this).attr('class').split(' ').slice(-1)[0])
+
+          // var eclassName = "e"
+          $(this).addClass(gclassName + i)
+
+          i++
+        })
+    }
+});
+
+
+$(document).on('click', '.remove4', function() {
+    // o = this remove4
+    o = $(this)
+
+    p = o.parent().parent()
+    console.log(p)
+
+    x = o.parents(".task-container").find(".layer-3-b").children("ul")
+    console.log(x)
+
+    // 親要素をたどってaを取得
+    var aClassNames = $(this).parent().parent().parent().parent().parent().parent().parent().attr('class')
+    console.log(aClassNames)
+
+    // 親要素をたどってbを取得
+    var bClassNames = $(this).parent().parent().parent().parent().parent().attr('class')
+    console.log(bClassNames)
+
+    // 親要素をたどってcを取得
+    var cClassNames = $(this).parent().parent().parent().attr('class')
+    console.log(cClassNames)
+
+
+    // 1.d+i 取得
+    var dclassNames = o.parent().attr('class').split(' ').slice(-1)[0]
+    console.log(dclassNames)
+
+    // 2.アルファベットのみ取得
+    var dclassName = dclassNames.split(' ').slice(-1)[0]
+    dclassName = dclassNames.slice(0)[0]
+    console.log(dclassName)
+
+    // 2.数字のみ取得
+    var dclassNum = dclassNames.slice(1)
+    console.log(dclassNum)
+
+    // 3.h+i 取得
+    // dをhに変える
+    var hclassName = String.fromCharCode(dclassName.charCodeAt(0) + 4)
+    console.log(hclassName)
+
+    var hclassNames = hclassName + dclassNum
+    console.log(hclassNames)
+    // console.log(eclassName)
+
+    // aからeを取得
+    var eclassName = "e"+aClassNames.slice(1)
+    console.log(eclassName)
+
+    // bからfを取得
+    var fclassName = "f"+bClassNames.slice(1)
+    console.log(fclassName)
+
+    // cからgを取得
+    var gclassName = "g"+cClassNames.slice(1)
+    console.log(gclassName)
+
+
+    // 4.layer-2-b f+iをremove
+    console.log($(`.${eclassName}`).find(`.${hclassNames}`))
+    $(`.${eclassName}`).find(`.${hclassNames}`).remove();
+
+    // 5.layer-2-a b+iをremove
+    o.parent().remove();
+
+
+    // 2.aのアルファベットのみ取得
+    var cClassName = cClassNames.split(' ').slice(-1)[0]
+    cClassName = cClassNames.slice(0)[0]
+    console.log(cClassName)
+
+    // 2.aをbに変える
+    var dClassName = String.fromCharCode(cClassName.charCodeAt(0) + 1)
+    console.log(dClassName)
+
+
+    // 6.b_resetClass
+    d_resetClass(p)
+
+    function d_resetClass(object) {
+
+        i = 1
+
+        object.children("div").each(function () {
+
+          $(this).removeClass($(this).attr('class').split(' ').slice(-1)[0])
+
+          $(this).addClass(dClassName + i)
+
+          i++;
+
+        })
+    }
+
+
+    // 7.e_resetClass
+    h_resetClass(x)
+
+    function h_resetClass(object) {
+
+        i = 1
+        // console.log(object.find(`.${nextClassNames}`).attr("class"))
+
+        $(`.${eclassName}`).find(`.${gclassName}`).children(".layer-3-B").children(".layer-4-b").each(function(){
+
+          $(this).removeClass($(this).attr('class').split(' ').slice(-1)[0])
+
+          // var eclassName = "e"
+          $(this).addClass(hclassName + i)
+
+          i++
+        })
+    }
+});
