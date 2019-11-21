@@ -43,7 +43,7 @@ $('.layer-B').funcResizeBox({
 
 // add-btn
 // layer-a
-$('.layer-1-a').sortable();
+// $('.layer-1-a').sortable();
 $(document).on("click", ".add-btn", function() {
   var html = `
         <div data-deep=1>
@@ -123,9 +123,9 @@ $(document).on("click", ".add-btn-1", function() {
             </div>
         `;
   }
-  $('.layer-2-a').sortable();
-  $('.layer-3-a').sortable();
-  $('.layer-4-a').sortable();
+  // $('.layer-2-a').sortable();
+  // $('.layer-3-a').sortable();
+  // $('.layer-4-a').sortable();
   // console.log($(this).parent().children("ul"))
   $(this).parent().children("ul").append(html);
   // addclassNames($(this));
@@ -210,7 +210,7 @@ $(document).on("click", ".add-btn-layer-3", function() {
         <p class="accordion article-title"></p>
         <ul class="layer-3-B"></ul>
     `;
-  $('.layer-2-B').sortable();
+  // $('.layer-2-B').sortable();
 
   var aclassVal = $(this).parent().parent().parent().attr('class')
   console.log(aclassVal)
@@ -285,7 +285,7 @@ $(document).on("click", ".add-btn-layer-3", function() {
         var gclassName = "g" + cclassName.slice(1)
         // console.log($(`.${eclassName}`).attr('class'))
         // $(`.${eclassName}`).find() .${fclassName} .${gclassName}.find('h2').text(str);
-        $(`.${eclassName}`).find(`.${gclassName}`).find('h2').text(str);
+        $(`.${eclassName}`).find(`.${fclassName}`).find(`.${gclassName}`).find('h2').text(str);
 
       }
     }
@@ -307,7 +307,7 @@ $(document).on("click", ".add-btn-layer-4", function() {
     </div>
 
     `;
-  $('.layer-3-B').sortable();
+  // $('.layer-3-B').sortable();
   // --------------------超重要----------------------------------
   // layer3-b子要素ulのclass .layer-4-Bに .layer-4-bを出力
 
@@ -402,7 +402,7 @@ $(document).on("click", ".add-btn-layer-4", function() {
         var hclassName = "h" + dclassName.slice(1)
         console.log($(`.${eclassName}`).attr('class'))
         // $(`.${eclassName}`).find() .${fclassName} .${gclassName}.find('h2').text(str);
-        $(`.${eclassName}`).find(`.${hclassName}`).find('h3').text(str);
+        $(`.${eclassName}`).find(`.${fclassName}`).find(`.${gclassName}`).find(`.${hclassName}`).find('h3').text(str);
 
       }
     }
@@ -418,7 +418,7 @@ $(document).on("click", ".add-btn-3", function() {
             <input type="text" class="text text-5" placeholder="layer-5=function">
             <input class="add-btn-4" type="button" value="+" >
             <button class="remove5">-</button>
-            <input class="comment-btn" type="button" value="コメント" >
+            <input class="comment-btn" type="button" value="スレッド" >
             <p class="accordion article-title"></p>
             <ul>
 
@@ -859,7 +859,12 @@ $(document).on('click', '.remove4', function() {
   }
 });
 
+// remove5,6
+$(document).on('click', '.remove5 ,.remove6', function() {
 
+  $(this).parent().remove();
+
+});
 
 
 // chat機能

@@ -1,15 +1,3 @@
-// accordion機能
-// section
-// 縦方向に開く
-// $('.section').click(function() {
-//   $('.explanation').slideToggle(400);
-//   // $('.header-b').fadeToggle(3000);
-// });
-
-// $(document).on("click", ".btn", function() {
-//   $(this).next("div").slideToggle(400);
-// });
-
 // アコーディオン機能
 //.accordionがクリックされたら
 $(document).on('click', '.accordion', function() {
@@ -27,6 +15,15 @@ function getNewNote() {
 			'<input data-color="#e0ff20" class="color-button" type="button" value="黄">' +
             '</div>';
 }
+
+// モーダル
+$(function() {
+  // ボタンをクリックしたら発動
+  $('.signup').click(function() {
+    // 連打で暴走しないようにstop()も設定
+    $('.top').stop().fadeToggle(300);
+  });
+});
 
 function appendFunctions($note) {
 	$note.draggable();

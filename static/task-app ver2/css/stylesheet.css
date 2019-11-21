@@ -49,7 +49,7 @@ li{
   content: "";
   position: absolute;
   right: 10px;
-  bottom: 20px;
+  bottom: 17px;
   margin: 0;
   transition: all 0.2s ease-in-out;
   display: block;
@@ -72,7 +72,7 @@ li{
     content: "";
     position: absolute;
     right: 10px;
-    bottom: 5px;
+    bottom: -17px;
     margin: 0;
     transition: all 0.2s ease-in-out;
     display: block;
@@ -190,8 +190,12 @@ h3{
     box-shadow:rgba(0, 0, 0, 0.3) 1px 1px 3px;
 }
 
+.layer-1-a{
+  line-height: 40px;
+}
+
 .layer-1-a,.layer-2-a,.layer-3-a,.layer-4-a{
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .layer-1-a div{
@@ -222,6 +226,9 @@ h3{
   margin: 0px;
 }
 
+.layer-2-B{
+  margin-bottom: 20px;
+}
 
 .layer-3-b{
     border:1px solid #EEE;
@@ -233,12 +240,16 @@ h3{
 .layer-3-b ul{
     padding-left: 10px;
 }
+.layer-3-b h2{
+  margin: 10px;
+}
 
 .layer-4-b{
     /* border: solid 1px black;
     border-radius: 10px; */
     margin: 10px 0;
-    padding: 10px;
+    padding: 5px;
+    line-height: 30px;
     border:1px solid #EEE;
     border-radius: 8px;
     box-shadow:rgba(0, 0, 0, 0.05) 1px 1px 1px;
@@ -251,16 +262,17 @@ h3{
 
 .add-btn-3{
     margin-right: 25px;
+    margin-top: 6px;
 }
 
-.layer-4-b ul{
-    padding-left: 10px;
-    margin-top: 0px;
+.layer-4-B{
+  padding-left: 10px;
+  margin-top: 30px;
 }
 
 .layer-5{
-    margin-top: 30px;
-    padding: 5px;
+    margin-top: 10px;
+    line-height: 40px;
     box-shadow:rgba(0, 0, 0, 0.2) 0px 0px 1px;
     background-color: rgb(255, 255, 255);
 }
@@ -268,11 +280,11 @@ h3{
 
 .layer-5 ul{
     padding-left: 20px;
+    padding-bottom: 5px;
 }
 
 .layer-6{
     margin-top: 10px;
-    padding: 5px;
     box-shadow:rgba(0, 0, 0, 0.2) 0px 0px 1px;
     background-color: rgb(255, 255, 255);
 }
