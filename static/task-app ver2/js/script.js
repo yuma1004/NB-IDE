@@ -72,7 +72,7 @@ $(document).on("click", ".add-btn", function() {
 
   // layer-b
   var html = `
-        <div data-deep=1>
+        <div class="layer-1-b" data-deep=1>
           <ul class="layer-1-B"></ul>
         </div>
     `;
@@ -497,11 +497,11 @@ $(document).on('click', '.remove1', function() {
   function a_resetClass(object) {
 
     i = 1
-
+console.log(object.children("div"))
     object.children("div").each(function() {
-
+      console.log($(this))
       $(this).removeClass($(this).attr('class').split(' ').slice(-1)[0])
-
+      console.log(aClassName)
       $(this).addClass(aClassName + i)
 
       i++;
@@ -515,11 +515,14 @@ $(document).on('click', '.remove1', function() {
   function e_resetClass(object) {
 
     i = 1
-    console.log(object.parent())
+
+    console.log(object)
+    console.log(object.find(".layer-1-b"))
+
     object.find(".layer-1-b").each(function() {
-
+      console.log(this)
       $(this).removeClass($(this).attr('class').split(' ').slice(-1)[0])
-
+      console.log(nextClassName)
       // var eclassName = "e"
       $(this).addClass(nextClassName + i)
 
