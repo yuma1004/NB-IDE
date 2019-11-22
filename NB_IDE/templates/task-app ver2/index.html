@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+        <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+        <script src="{% static 'task-app ver2/js/jquery.funcResizeBox.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+
+        <link rel="stylesheet" type="text/css" href="{% static 'task-app ver2/css/stylesheet.css' %}">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <!-- Font Awesome 5.7.1 -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+        <title>task-app ver2 11-20</title>
+    </head>
+    <body>
+        <!--header ロゴ・App名・会社名など -->
+        <header>
+            <div class="container header-a">
+                <div class="header-left">
+                    <a href="＃">NB-IDE</a>
+                    <button class="btn-header-a">task-app</button>
+                </div>
+                <div class="header-right">
+
+                </div>
+            </div>
+
+            <div class="container header-b">
+                    <div class="header-left">
+                        <button class="btn-header-b">header-a close&open</button>
+                        <input class="add-btn" type="button" value="new task" >
+                        <input class="#" type="button" value="day">
+                        <input class="#" type="button" value="week">
+                        <input class="#" type="button" value="month">
+                    </div>
+                    <div class="header-right">
+                        <input class="add-btn-layer-c" type="button" value="chat" >
+
+                    </div>
+                </div>
+        </header>
+
+        <div class="container">
+
+            <div class="task-container">
+
+              <div class="layer-A">
+                <ul class="layer-1-a">
+                      <!-- add-btn-layer-1-a click時ココに出力 -->
+                </ul>
+              </div>
+
+              <div class="layer-B">
+                <ul>
+                      <!-- add-btn-layer-1-b click時ココに出力 -->
+                </ul>
+              </div>
+            </div>
+
+                <div class="layer-c">
+
+                    <!-- layer-c -->
+                        <!-- add-btn-layer-c click時ココに出力 -->
+
+                </div>
+
+        </div>
+
+
+    <!-- jsを機能させる為に必須 -->
+    <script src="{% static 'task-app ver2/js/script.js' %}"></script>
+</body>
+</html>
