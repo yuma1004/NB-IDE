@@ -335,7 +335,7 @@ $(document).on("click", ".add-btn-layer-4", function() {
   console.log(gclassName)
 
 
-  $(`.${eclassName}`).find(`.${gclassName}`).children(".layer-3-B").append(html);
+  $(`.${eclassName}`).find(`.${fclassName}`).find(`.${gclassName}`).children(".layer-3-B").append(html);
   // ------------------------------------------------------
   $('.add-btn-3').css('float', 'right');
 

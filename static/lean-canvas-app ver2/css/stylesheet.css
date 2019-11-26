@@ -1,6 +1,6 @@
 body{
-    font-family: "Lato"; 
-    margin:0; 
+    font-family: "Lato";
+    margin:0;
     padding: 0;
 }
 
@@ -43,9 +43,14 @@ body{
     height: auto;
 }
 
-textarea {
+/* textarea {
     height: 70%;
     width: 95%;
+} */
+textarea{
+    width: 98%;
+    max-width: 98%;
+    min-width: 98%;
 }
 
 #add-button {
